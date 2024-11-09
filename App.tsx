@@ -1,9 +1,10 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import LoginScreen from './src/screens/LoginScreen';
+import LoginScreen from './src/screens/Auth/LoginScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import {firebase} from '@react-native-firebase/auth';
+import CryptoDetailScreen from './src/screens/CryptoDetailScreen';
 
 const Stack = createStackNavigator();
 
@@ -27,12 +28,17 @@ const App = () => {
         <Stack.Screen
           name="Login"
           component={LoginScreen}
-          options={{headerShown: false}} // 헤더 숨김 옵션
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{headerShown: false}} // 헤더 숨김 옵션
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="CryptoDetail"
+          component={CryptoDetailScreen}
+          options={{headerShown: false}}
         />
       </Stack.Navigator>
     </NavigationContainer>
